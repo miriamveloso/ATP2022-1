@@ -12,7 +12,7 @@ def consulta(bd, procura):
     for p in range(len(bd['pessoas'])):   
         listaValores = list(bd['pessoas'][p].values())
         nome, identi = listaValores[0], listaValores[4]
-        nome2 = nome.split(" ")   #---> ["Roxana", "ffnfnf", "Munhoz"]
+        nome2 = nome.split(" ")
         procura2 = procura.split(" ")
         n = 0
         while n < len(procura2):
