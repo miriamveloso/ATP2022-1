@@ -80,8 +80,27 @@ def consulta(bd, procura):
 
 
 
-##### LISTAS #####
+# Listar todos os indivíduos de uma determinada religião
+def listar_religiao(bd, religiao):
+    lista = []
+    for pessoa in bd['pessoas']:
+        if 'religiao' in pessoa.keys() and religiao == pessoa['religiao']:
+            lista.append(pessoa)
+    if lista == []:
+        lista = "Não existe ninguém com a religião que atribuíste."
+    return lista
 
+
+# Listar todos os indivíduos que gostam de um determinado animal
+def listar_animal(bd, detanimal):
+    lista = []
+    for pessoa in bd['pessoas']:
+        for animal in pessoa['animais']:
+            if animal == detanimal:
+                lista.append(pessoa)
+    if lista == []:
+        lista = "Não existe ninguém com o animal que atribuíste."
+    return lista
 
 # Quantos indivíduos há na bd?
 def numindiv(bd):
